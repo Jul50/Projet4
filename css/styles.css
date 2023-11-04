@@ -4,12 +4,10 @@
 }
 
 :root {
-  --black: #101010;
   --grey: #353535;
   --grey-2: #eaeaea;
   --grey-3: #f6f6f6;
   --grey-4: #7e7e7e;
-  --Button-Gradient: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
   --white: rgb(255, 255, 255);
 }
 
@@ -29,7 +27,7 @@
     flex-shrink: 0;
   }
   h1 {
-    color: var(--Black);
+    color: black;
     text-align: center;
     font-family: Shrikhand;
     font-size: 30px;
@@ -97,7 +95,7 @@
     height: 50px;
     flex-shrink: 0;
     border-radius: 25px;
-    background: var(--Button-Gradient);
+    background: linear-gradient(193deg, #b184e6, #fe00b8);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     margin: 0px 75px 0px 82px;
   }
@@ -125,7 +123,11 @@
     line-height: normal;
     padding: 48px 80px 26px 20px;
   }
-  .fuctioning__btn {
+  .functioning {
+    /***** ↓ FUCTIONING BUTTONS ↓ *****/
+  }
+  .functioning__btn {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,8 +139,18 @@
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     margin: 26px 20px 25px 32px;
   }
-  /***** ↓ FUCTIONING BUTTONS ↓ *****/
-  .fuctioning__btn--txt {
+  .functioning__number {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -8px;
+    border-radius: 25px;
+    background-color: #9356dc;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+  }
+  .functioning__btn--txt {
     color: #000;
     font-family: Roboto;
     font-size: 18px;
@@ -146,7 +158,7 @@
     font-weight: 500;
     line-height: normal;
   }
-  .fuctioning__btn--txt .fa-solid {
+  .functioning__btn--txt .fa-solid {
     display: inline-block;
     color: var(--grey-4);
     padding-right: 27px;
