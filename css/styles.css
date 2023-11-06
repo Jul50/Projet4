@@ -91,9 +91,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 118 px;
+    max-width: 100%;
     height: 50px;
-    flex-shrink: 0;
     border-radius: 25px;
     background: linear-gradient(193deg, #b184e6, #fe00b8);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
@@ -131,13 +130,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 322px;
+    max-width: 100%;
     height: 72.379px;
     flex-shrink: 0;
     border-radius: 20px;
     background-color: var(--grey-3);
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-    margin: 26px 20px 25px 32px;
+    margin: 0px 20px 25px 32px;
   }
   .functioning__number {
     width: 24px;
@@ -162,5 +161,66 @@
     display: inline-block;
     color: var(--grey-4);
     padding-right: 27px;
+  }
+  /***** ↓ RESTAURANT CARDS ↓ *****/
+  .container__restaurants {
+    background-color: var(--grey-3);
+    padding-left: 17px;
+    padding-right: 18px;
+    padding-bottom: 66px;
+  }
+  .container__restaurants__cards {
+    box-sizing: border-box;
+  }
+  .container__restaurants .card {
+    background-color: white;
+    border-radius: 25px;
+    max-width: 100%;
+    height: 230px;
+    flex-shrink: 0;
+    padding: 0px;
+    margin-bottom: 18px;
+  }
+  .container__restaurants .card img {
+    height: 150px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-top-left-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+  }
+  .container__restaurants .card .card__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .container__restaurants .card .card__content p {
+    color: #000;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    margin-left: 13px;
+    margin-right: 60px;
+  }
+  .container__restaurants .card .card__content h4 {
+    color: black;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 16px;
+    margin-bottom: 0px;
+    margin-left: 13px;
+    margin-right: 60px;
+  }
+  .container__restaurants .card .card__content .card__content__btn {
+    display: flex;
+    font-size: 33px;
+    padding: 23px 25px 0px 0px;
   }
 }/*# sourceMappingURL=styles.css.map */
