@@ -3,14 +3,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --grey: #353535;
-  --grey-2: #eaeaea;
-  --grey-3: #f6f6f6;
-  --grey-4: #7e7e7e;
-  --white: rgb(255, 255, 255);
-}
-
 /***** Small devices (phones, less than 768px) *****/
 @media (max-width: 767.98px) {
   body {
@@ -36,7 +28,7 @@
     line-height: normal;
   }
   .header__city {
-    background-color: var(--grey-2);
+    background-color: #eaeaea;
     display: flex;
     width: 100%;
     height: 50px;
@@ -44,10 +36,10 @@
     align-items: center;
     gap: 17px;
     flex-shrink: 0;
-    box-shadow: inset 0px 11px 8px -10px var(--grey);
+    box-shadow: inset 0px 11px 8px -10px #353535;
   }
   .header__city--text {
-    color: var(--Grey, #353535);
+    color: #353535;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
@@ -55,12 +47,12 @@
     line-height: normal;
   }
   .fa-solid {
-    color: var(--grey);
+    color: #353535;
   }
   /***** ↓ MAIN ↓ *****/
   /***** ↓ TITRE(h2) + BOUTON EXPLORER ↓ *****/
   .container__reservation {
-    background-color: var(--grey-3);
+    background-color: #f6f6f6;
     padding: 39px 0px 57px 0px;
   }
   h2 {
@@ -76,7 +68,7 @@
   .reservation p {
     height: 46px;
     flex-shrink: 0;
-    color: var(--Grey);
+    color: #353535;
     text-align: center;
     font-family: Roboto;
     font-size: 18px;
@@ -99,7 +91,7 @@
     margin: 0px 75px 0px 82px;
   }
   .btn__explor {
-    color: var(--white);
+    color: white;
     text-align: center;
     font-family: Roboto;
     font-size: 16px;
@@ -123,7 +115,7 @@
     padding: 48px 80px 26px 20px;
   }
   .functioning {
-    /***** ↓ FUCTIONING BUTTONS ↓ *****/
+    /***** ↓ FUNCTIONING BUTTONS ↓ *****/
   }
   .functioning__btn {
     position: relative;
@@ -134,7 +126,7 @@
     height: 72.379px;
     flex-shrink: 0;
     border-radius: 20px;
-    background-color: var(--grey-3);
+    background-color: #f6f6f6;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     margin: 0px 20px 25px 32px;
   }
@@ -159,12 +151,12 @@
   }
   .functioning__btn--txt .fa-solid {
     display: inline-block;
-    color: var(--grey-4);
+    color: #7e7e7e;
     padding-right: 27px;
   }
   /***** ↓ RESTAURANT CARDS ↓ *****/
   .container__restaurants {
-    background-color: var(--grey-3);
+    background-color: #f6f6f6;
     padding-left: 17px;
     padding-right: 18px;
     padding-bottom: 66px;
@@ -189,12 +181,12 @@
     border-top-left-radius: 20px 20px;
     border-top-right-radius: 20px 20px;
   }
-  .container__restaurants .card .card__content {
+  .container__restaurants .card__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .container__restaurants .card .card__content p {
+  .container__restaurants .card__content p {
     color: #000;
     font-family: Roboto;
     font-size: 17px;
@@ -206,7 +198,7 @@
     margin-left: 13px;
     margin-right: 60px;
   }
-  .container__restaurants .card .card__content h4 {
+  .container__restaurants .card__content h4 {
     color: black;
     font-family: Roboto;
     font-size: 18px;
@@ -218,9 +210,53 @@
     margin-left: 13px;
     margin-right: 60px;
   }
-  .container__restaurants .card .card__content .card__content__btn {
+  .container__restaurants .card__content .card__content__btn {
     display: flex;
     font-size: 33px;
     padding: 23px 25px 0px 0px;
+  }
+  .container__footer {
+    background-color: #353535;
+    padding: 22px;
+    color: white;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  ul {
+    list-style-type: none;
+  }
+  li {
+    padding-bottom: 7px;
+  }
+  h5 {
+    margin-top: 0px;
+    margin-bottom: 16px;
+    display: flex;
+    width: 139px;
+    height: 27px;
+    padding-right: 0px;
+    justify-content: center;
+    align-items: center;
+    color: var(--White, #fff);
+    font-family: Shrikhand;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .fa-utensils:before {
+    color: white;
+    flex-shrink: 0;
+    padding-right: 11px;
+  }
+  .fa-handshake-angle:before {
+    color: white;
+    font-size: 11px;
+    flex-shrink: 0;
+    padding-right: 10px;
+    font-size: 13px;
   }
 }/*# sourceMappingURL=styles.css.map */
