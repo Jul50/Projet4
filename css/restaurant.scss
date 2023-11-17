@@ -10,12 +10,13 @@ $grey-3: #f6f6f6;
 $grey-4: #7e7e7e;
 $light-green: #99e2d0;
 $green: #008766;
+$pink: #ff79da;
 
 h1 {
   color: black;
   text-align: center;
   font-family: Shrikhand;
-  font-size: 30px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -26,15 +27,18 @@ h1 {
   body {
     margin: 0;
   }
-
+  .fa-arrow-left {
+    position: absolute;
+    left: 17px;
+    top: 26px;
+  }
   .header__restaurant {
-    gap: 42px;
-    padding: 14px 89px 13px 17px;
     z-index: 1;
     position: relative;
     background-color: white;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .container__banner {
@@ -68,15 +72,38 @@ h1 {
 
   .txt__title {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin-right: 24px;
   }
   .container__menu__main .fa-heart:before {
     font-size: 33px;
   }
-  .menu__epd {
-    display: grid;
-    gap: 10px;
+  .menu {
+    &__e {
+      display: grid;
+      gap: 10px;
+      animation: itempop 0.6s;
+      animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+      animation-fill-mode: both;
+      max-width: 100%;
+    }
+    &__p {
+      display: grid;
+      gap: 10px;
+      animation: itempop 1.2s;
+      animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+      animation-fill-mode: both;
+      max-width: 100%;
+    }
+    &__d {
+      display: grid;
+      gap: 10px;
+      animation: itempop 1.8s;
+      animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+      animation-fill-mode: both;
+      transform: scale(0);
+    }
   }
 
   h4 {
@@ -90,6 +117,16 @@ h1 {
     margin-top: 20px;
     margin-bottom: 12px;
   }
+  h4::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: $light-green;
+    position: relative;
+    bottom: -2px;
+    left: 0;
+  }
 
   .container__dishes {
     background-color: white;
@@ -100,9 +137,11 @@ h1 {
       sans-serif;
     overflow: hidden;
   }
+
   .dish {
     overflow: hidden;
     text-overflow: ellipsis;
+
     &__content {
       display: flex;
       flex-direction: row;
@@ -166,8 +205,9 @@ h1 {
   }
 
   .commander {
-    margin-top: 30px;
-    margin-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
     display: flex;
     justify-content: center;
   }
@@ -327,6 +367,15 @@ h1 {
       transform: scale(1);
       opacity: 1;
       font-weight: 700;
+    }
+  }
+  @keyframes itempop {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
     }
   }
 }
