@@ -21,7 +21,7 @@ h1 {
   line-height: normal;
 }
 
-/******** restaurant *******/
+/********  ↓ restaurant ↓ *******/
 @media (max-width: 767.98px) {
   body {
     margin: 0;
@@ -35,7 +35,6 @@ h1 {
     background-color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
   .container__banner {
@@ -81,7 +80,7 @@ h1 {
   }
 
   h4 {
-    color: red;
+    color: black;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
@@ -164,14 +163,13 @@ h1 {
       align-items: center;
       margin-left: 15px;
     }
-    &__valid__check {
-      transform: rotate(180deg);
-    }
   }
 
   .commander {
     margin-top: 30px;
     margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
   }
   .container__footer {
     background-color: $grey;
@@ -226,7 +224,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 186px;
+    width: 186px;
     height: 50px;
     border-radius: 25px;
     background: $button-gradient;
@@ -247,15 +245,88 @@ h1 {
       box-shadow: 0px 4px 10px 0px rgb(0, 0, 0);
     }
   }
-}
 
-@keyframes icon-rotate {
-  0% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
+  /***** ↓ Footer ↓ ******/
+
+  li a {
+    color: white;
+    text-decoration: none;
   }
-  100% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+
+  /***** ↓ Anim ↓ ******/
+
+  .hearts {
+    position: relative;
+    border-radius: 50%;
+    width: auto;
+  }
+
+  .hearts:hover > .heart-1 {
+    opacity: 0;
+    font-weight: 700;
+  }
+
+  .hearts:hover > .heart-2 {
+    -webkit-animation: fill 250ms ease-out forwards;
+    animation: fill 250ms ease-out forwards;
+  }
+
+  .heart-1 {
+    position: absolute;
+    color: #000000;
+    font-size: 24px;
+    display: block;
+    background: -webkit-linear-gradient(238deg, black 0%, black 39%, black 85%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+  }
+
+  .heart-2 {
+    font-size: 24px;
+    background: $button-gradient;
+    position: relative;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+  }
+
+  @keyframes icon-rotate {
+    0% {
+      -webkit-transform: rotate(-180deg);
+      transform: rotate(-180deg);
+    }
+    100% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  }
+
+  @-webkit-keyframes fill {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+      font-weight: 700;
+    }
+  }
+
+  @keyframes fill {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+      font-weight: 700;
+    }
   }
 }
