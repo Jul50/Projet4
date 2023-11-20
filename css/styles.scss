@@ -1,3 +1,4 @@
+@import "mixins";
 * {
   box-sizing: border-box;
 }
@@ -15,8 +16,12 @@ $light-green: #99e2d0;
 $green: #008766;
 $pink: #ff79da;
 
-/***** Small devices (phones, less than 768px) *****/
-@media (max-width: 767.98px) {
+/***** Small devices (phones, less than 1040px) *****/
+@media (max-width: 1040px) {
+  .loader {
+    @include loader;
+  }
+
   body {
     margin: 0;
     font-family: Roboto;
@@ -320,113 +325,25 @@ $pink: #ff79da;
     padding-right: 9px;
     font-size: 13px;
   }
+}
 
-  /******** ANIMATION *********/
+/******** ANIMATION *********/
 
-  .hearts {
-    position: relative;
-    border-radius: 50%;
-    width: auto;
-  }
-
-  .hearts:hover > .heart-1 {
-    opacity: 0;
-    font-weight: 700;
-  }
-
-  .hearts:hover > .heart-2 {
-    -webkit-animation: fill 250ms ease-out forwards;
-    animation: fill 250ms ease-out forwards;
-  }
-
-  .heart-1 {
-    position: absolute;
-    color: #000000;
-    font-size: 24px;
-    display: block;
-    background: -webkit-linear-gradient(238deg, black 0%, black 39%, black 85%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 1;
-  }
-
-  .heart-2 {
-    font-size: 24px;
-    background: $button-gradient;
-    position: relative;
-    top: -10px;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0;
-  }
-
-  @-webkit-keyframes fill {
-    0% {
-      -webkit-transform: scale(0);
-      transform: scale(0);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      opacity: 1;
-      font-weight: 700;
-    }
-  }
-
-  @keyframes fill {
-    0% {
-      -webkit-transform: scale(0);
-      transform: scale(0);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      opacity: 1;
-      font-weight: 700;
-    }
-  }
-  .loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(169, 169, 169, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    animation: fadeOut 3s ease-in-out forwards;
-    z-index: 9999;
-    pointer-events: none;
-  }
-
-  .loader {
-    border: 16px solid $grey-2;
-    border-top: 16px solid $purple;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
+.hearts {
+  @include heartanimation;
+}
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(169, 169, 169, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  animation: fadeOut 3s ease-in-out forwards;
+  z-index: 9999;
+  pointer-events: none;
 }

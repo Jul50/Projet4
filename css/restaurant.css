@@ -1,18 +1,36 @@
 @charset "UTF-8";
-h1 {
-  color: black;
-  text-align: center;
-  font-family: Shrikhand;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+/***** ANIM COEUR *****/
+/*****  CARTE PLAT SUR MENU RESTO*****/
+/***** LOADER *****/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /********  ↓ restaurant ↓ *******/
-@media (max-width: 767.98px) {
+@media (max-width: 1040px) {
   body {
     margin: 0;
+  }
+  h1 {
+    color: black;
+    text-align: center;
+    font-family: Shrikhand;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
   .fa-arrow-left {
     position: absolute;
@@ -69,6 +87,14 @@ h1 {
     animation-fill-mode: both;
     max-width: 100%;
   }
+  @keyframes itempop {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   .menu__p {
     display: grid;
     gap: 10px;
@@ -77,13 +103,29 @@ h1 {
     animation-fill-mode: both;
     max-width: 100%;
   }
+  @keyframes itempop {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   .menu__d {
     display: grid;
     gap: 10px;
     animation: itempop 1.8s;
     animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
     animation-fill-mode: both;
-    transform: scale(0);
+    max-width: 100%;
+  }
+  @keyframes itempop {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
   h4 {
     color: black;
@@ -110,7 +152,7 @@ h1 {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: roboto;
     overflow: hidden;
   }
   .dish {
@@ -186,8 +228,15 @@ h1 {
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
     line-height: normal;
+  }
+  .container__footer__list__one {
+    font-weight: 500;
+    margin: 0px 0px 0px 0px;
+  }
+  .container__footer__list__two {
+    font-weight: 400;
+    margin: 0px 0px 0px 0px;
   }
   ul {
     list-style-type: none;
@@ -214,13 +263,14 @@ h1 {
   .fa-utensils:before {
     color: white;
     flex-shrink: 0;
-    padding-right: 11px;
+    padding-right: 10px;
+    font-size: 13px;
   }
   .fa-handshake-angle:before {
     color: white;
-    font-size: 11px;
+    font-size: 12px;
     flex-shrink: 0;
-    padding-right: 9px;
+    padding-right: 10px;
     font-size: 13px;
   }
   .fa-solid {
@@ -255,64 +305,48 @@ h1 {
     color: white;
     text-decoration: none;
   }
-  /***** ↓ Anim ↓ ******/
-  .hearts {
-    position: relative;
-    border-radius: 50%;
-    width: auto;
-  }
-  .hearts:hover > .heart-1 {
+}
+.hearts {
+  position: relative;
+  border-radius: 50%;
+  width: auto;
+}
+.hearts:hover > .heart-1 {
+  opacity: 0;
+  font-weight: 700;
+}
+.hearts:hover > .heart-2 {
+  animation: fill 250ms ease-out forwards;
+}
+@keyframes fill {
+  0% {
+    transform: scale(0);
     opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
     font-weight: 700;
   }
-  .hearts:hover > .heart-2 {
-    animation: fill 250ms ease-out forwards;
-  }
-  .heart-1 {
-    position: absolute;
-    color: #000000;
-    font-size: 24px;
-    display: block;
-    background: -webkit-linear-gradient(238deg, black 0%, black 39%, black 85%);
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 1;
-  }
-  .heart-2 {
-    font-size: 24px;
-    background: linear-gradient(193deg, #b184e6, #fe00b8);
-    position: relative;
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0;
-  }
-  @keyframes icon-rotate {
-    0% {
-      transform: rotate(-180deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-  @keyframes fill {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-      font-weight: 700;
-    }
-  }
-  @keyframes itempop {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
+}
+.hearts .heart-1 {
+  position: absolute;
+  color: #000000;
+  font-size: 24px;
+  display: block;
+  background: -webkit-linear-gradient(238deg, black 0%, black 39%, black 85%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
+}
+.hearts .heart-2 {
+  font-size: 24px;
+  background: linear-gradient(193deg, #b184e6, #fe00b8);
+  position: relative;
+  top: -10px;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
 }/*# sourceMappingURL=restaurant.css.map */
