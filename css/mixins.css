@@ -1,19 +1,16 @@
 /***** ANIM COEUR *****/
 /*****  CARTE PLAT SUR MENU RESTO*****/
-/***** LOADER *****/
-@keyframes spin {
+@keyframes itempop {
   0% {
-    transform: rotate(0deg);
+    transform: scale(0);
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(1);
   }
 }
-@keyframes fadeOut {
+@keyframes icon-rotate {
   0% {
-    opacity: 1;
+    transform: rotate(-360deg);
   }
-  100% {
-    opacity: 0;
-  }
-}/*# sourceMappingURL=mixins.css.map */
+}
+/***** LOADER *****//*# sourceMappingURL=mixins.css.map */

@@ -1,349 +1,381 @@
 @import "mixins";
+@import "variable";
 * {
   box-sizing: border-box;
 }
-$purple: #9356dc;
-$button-gradient: linear-gradient(
-  193deg,
-  lighten($purple, 11%),
-  darken(#ff79da, 24%)
-);
-$grey: #353535;
-$grey-2: #eaeaea;
-$grey-3: #f6f6f6;
-$grey-4: #7e7e7e;
-$light-green: #99e2d0;
-$green: #008766;
-$pink: #ff79da;
 
-/***** Small devices (phones, less than 1040px) *****/
-@media (max-width: 1040px) {
-  .loader {
+.loader {
+  border: 16px solid $grey-2;
+  border-top: 16px solid $purple;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  &-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(169, 169, 169, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    animation: fadeOut 3s ease-in-out forwards;
+    z-index: 9999;
+    pointer-events: none;
     @include loader;
   }
+}
 
-  body {
-    margin: 0;
-    font-family: Roboto;
-  }
+body {
+  margin: 0;
+  font-family: Roboto;
+}
+/***** ↓ HEADER ↓ *****/
 
-  /***** ↓ HEADER ↓ *****/
+header {
+  display: flex;
+  width: 100%;
+  height: 63px;
+  padding: 14px 89px 13px 89px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
 
-  header {
-    display: flex;
-    width: 100%;
-    height: 63px;
-    padding: 14px 89px 13px 89px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-  }
+h1 {
+  color: black;
+  text-align: center;
+  font-family: Shrikhand;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
-  h1 {
-    color: black;
+.header__city {
+  background-color: $grey-2;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  flex-shrink: 0;
+  box-shadow: inset 0px 11px 8px -10px $grey;
+}
+
+.header__city--text {
+  color: $grey;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.fa-solid {
+  color: $grey;
+}
+
+/***** ↓ MAIN ↓ *****/
+/***** ↓ TITRE(h2) + BOUTON EXPLORER ↓ *****/
+.container__reservation {
+  background-color: $grey-3;
+  padding: 39px 0px 57px 0px;
+}
+
+h2 {
+  color: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0px 58px 0px 42px;
+}
+
+.reservation p {
+  height: 46px;
+  flex-shrink: 0;
+  color: $grey;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding: 0px 26px 0px 34px;
+  margin-top: 0px;
+}
+
+/***** ↓ BUTTON ↓ *****/
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 218px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(193deg, #b184e6, #fe00b8);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  margin: auto;
+
+  &__explor {
+    color: white;
     text-align: center;
-    font-family: Shrikhand;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .header__city {
-    background-color: $grey-2;
-    display: flex;
-    width: 100%;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    gap: 17px;
-    flex-shrink: 0;
-    box-shadow: inset 0px 11px 8px -10px $grey;
-  }
-
-  .header__city--text {
-    color: $grey;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
-  .fa-solid {
-    color: $grey;
+  &:hover {
+    filter: brightness(1.2);
+    box-shadow: 0px 4px 10px 0px rgb(0, 0, 0);
   }
+}
 
-  /***** ↓ MAIN ↓ *****/
-  /***** ↓ TITRE(h2) + BOUTON EXPLORER ↓ *****/
-  .container__reservation {
-    background-color: $grey-3;
-    padding: 39px 0px 57px 0px;
-  }
+/***** ↓ FUCTIONING ↓ *****/
 
-  h2 {
-    color: #000;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin: 0px 58px 0px 42px;
-  }
+h3 {
+  margin: 0px 0px 0px 0px;
+  color: #000;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 48px 80px 26px 20px;
+}
 
-  .reservation p {
-    height: 46px;
-    flex-shrink: 0;
-    color: $grey;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    padding: 0px 26px 0px 34px;
-    margin-top: 0px;
-  }
-
-  /***** ↓ BUTTON ↓ *****/
-
-  .btn {
+.functioning {
+  margin-bottom: 68px;
+  &__btn {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    background: $button-gradient;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    margin: 0px 75px 0px 82px;
-
-    &__explor {
-      color: white;
-      text-align: center;
-      font-family: Roboto;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-    }
-    &:hover {
-      filter: brightness(1.2);
-      box-shadow: 0px 4px 10px 0px rgb(0, 0, 0);
-    }
+    height: 72.379px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background-color: $grey-3;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    margin: 0px 20px 25px 32px;
   }
 
-  /***** ↓ FUCTIONING ↓ *****/
+  &__number {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -8px;
+    border-radius: 25px;
+    background-color: $purple;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+  }
 
-  h3 {
-    margin: 0px 0px 0px 0px;
+  /***** ↓ FUNCTIONING BUTTONS ↓ *****/
+
+  &__btn--txt {
     color: #000;
     font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 48px 80px 26px 20px;
-  }
-
-  .functioning {
-    margin-bottom: 68px;
-    &__btn {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 100%;
-      height: 72.379px;
-      flex-shrink: 0;
-      border-radius: 20px;
-      background-color: $grey-3;
-      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-      margin: 0px 20px 25px 32px;
-    }
-
-    &__number {
-      width: 24px;
-      height: 24px;
-      position: absolute;
-      left: -8px;
-      border-radius: 25px;
-      background-color: $purple;
-      color: white;
-      text-align: center;
-      line-height: 24px;
-    }
-
-    /***** ↓ FUNCTIONING BUTTONS ↓ *****/
-
-    &__btn--txt {
-      color: #000;
-      font-family: Roboto;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-    }
-
-    &__btn--txt .fa-solid {
-      display: inline-block;
-      color: $grey-4;
-      padding-right: 27px;
-    }
-  }
-
-  /***** ↓ RESTAURANT CARDS ↓ *****/
-  a {
-    text-decoration: none;
-  }
-  .container__restaurants {
-    background-color: $grey-3;
-
-    padding-bottom: 66px;
-    &__cards {
-      box-sizing: border-box;
-    }
-    span.card__new {
-      position: absolute;
-      right: 18px;
-      background-color: $light-green;
-      width: 80px;
-      height: 29px;
-      border-radius: 2px;
-      color: $green;
-      text-align: center;
-      font-family: Roboto;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 29px;
-      margin: 13px 12px;
-    }
-    .card {
-      background-color: white;
-      border-radius: 25px;
-      max-width: 100%;
-      height: 230px;
-      flex-shrink: 0;
-      padding: 0px;
-      margin: 0px 18px 18px 17px;
-
-      img {
-        height: 150px;
-        width: 100%;
-        object-fit: cover;
-        border-top-left-radius: 20px 20px;
-        border-top-right-radius: 20px 20px;
-      }
-
-      &__content {
-        display: flex;
-        flex-wrap: wrap;
-
-        justify-content: space-between;
-
-        p {
-          color: #000;
-          font-family: Roboto;
-          font-size: 17px;
-          font-style: normal;
-          font-weight: 300;
-          line-height: normal;
-          margin-top: 5px;
-          margin-bottom: 12px;
-          margin-left: 13px;
-          margin-right: 60px;
-        }
-
-        h4 {
-          color: black;
-          font-family: Roboto;
-          font-size: 18px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: normal;
-          margin-top: 16px;
-          margin-bottom: 0px;
-          margin-left: 13px;
-          margin-right: 60px;
-        }
-        .card__content__btn {
-          display: flex;
-          font-size: 33px;
-          padding: 23px 25px 0px 0px;
-        }
-      }
-    }
-  }
-
-  .container__footer {
-    background-color: $grey;
-    padding: 22px;
-    color: $grey-3;
-    font-family: Roboto;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
-  ul {
-    list-style-type: none;
-  }
 
-  li {
-    padding-bottom: 7px;
-  }
-
-  li a {
-    color: white;
-  }
-  h5 {
-    margin-top: 0px;
-    margin-bottom: 16px;
-    display: flex;
-    width: 139px;
-    height: 27px;
-    padding-right: 0px;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: Shrikhand;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-  .fa-utensils:before {
-    color: white;
-    flex-shrink: 0;
-    padding-right: 11px;
-  }
-  .fa-handshake-angle:before {
-    color: white;
-    font-size: 11px;
-    flex-shrink: 0;
-    padding-right: 9px;
-    font-size: 13px;
+  &__btn--txt .fa-solid {
+    display: inline-block;
+    color: $grey-4;
+    padding-right: 27px;
   }
 }
 
-/******** ANIMATION *********/
+/***** ↓ RESTAURANT CARDS ↓ *****/
+a {
+  text-decoration: none;
+}
+.container__restaurants {
+  background-color: $grey-3;
 
+  padding-bottom: 66px;
+  &__cards {
+    box-sizing: border-box;
+  }
+  span.card__new {
+    position: absolute;
+    right: 18px;
+    background-color: $light-green;
+    width: 80px;
+    height: 29px;
+    border-radius: 2px;
+    color: $green;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+    margin: 13px 12px;
+  }
+  .card {
+    background-color: white;
+    border-radius: 25px;
+    max-width: 100%;
+    height: 230px;
+    flex-shrink: 0;
+    padding: 0px;
+    margin: 0px 18px 18px 17px;
+
+    img {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+      border-top-left-radius: 20px 20px;
+      border-top-right-radius: 20px 20px;
+    }
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: space-between;
+
+      p {
+        color: #000;
+        font-family: Roboto;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-top: 5px;
+        margin-bottom: 12px;
+        margin-left: 13px;
+        margin-right: 60px;
+      }
+
+      h4 {
+        color: black;
+        font-family: Roboto;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 16px;
+        margin-bottom: 0px;
+        margin-left: 13px;
+        margin-right: 60px;
+      }
+      .card__content__btn {
+        display: flex;
+        font-size: 33px;
+        padding: 23px 25px 0px 0px;
+      }
+    }
+  }
+}
 .hearts {
   @include heartanimation;
 }
-.loader-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(169, 169, 169, 0.5);
+
+.container__footer {
+  background-color: $grey;
+  padding: 22px;
+  color: $grey-3;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding-bottom: 7px;
+}
+
+li a {
+  color: white;
+}
+h5 {
+  margin-top: 0px;
+  margin-bottom: 16px;
   display: flex;
-  align-items: center;
+  width: 139px;
+  height: 27px;
+  padding-right: 0px;
   justify-content: center;
-  opacity: 1;
-  animation: fadeOut 3s ease-in-out forwards;
-  z-index: 9999;
-  pointer-events: none;
+  align-items: center;
+  color: white;
+  font-family: Shrikhand;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.fa-utensils:before {
+  color: white;
+  flex-shrink: 0;
+  padding-right: 11px;
+}
+.fa-handshake-angle:before {
+  color: white;
+  font-size: 11px;
+  flex-shrink: 0;
+  padding-right: 9px;
+  font-size: 13px;
+}
+
+@media (min-width: 1440px) {
+  h2 {
+    margin-bottom: 18px;
+    font-size: 40px;
+  }
+  h3 {
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  .functioning {
+    display: flex;
+    max-width: 1080px;
+    margin: auto;
+    justify-content: space-between;
+    &__btn {
+      width: 322px;
+      margin: 0px 20px 25px 0px;
+    }
+  }
+
+  .container__restaurants__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  .container__footer {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 7px;
+  }
 }
