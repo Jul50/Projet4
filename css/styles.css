@@ -221,6 +221,9 @@ h3 {
   color: #7e7e7e;
   padding-right: 27px;
 }
+.functioning__btn--txt .fa-solid:hover {
+  color: #9356dc;
+}
 
 /***** ↓ RESTAURANT CARDS ↓ *****/
 a {

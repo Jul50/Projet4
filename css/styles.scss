@@ -195,6 +195,9 @@ h3 {
     display: inline-block;
     color: $grey-4;
     padding-right: 27px;
+    &:hover {
+      color: $purple;
+    }
   }
 }
 

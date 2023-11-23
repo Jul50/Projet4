@@ -190,10 +190,12 @@ h4::after {
   font-size: 16px;
   font-style: normal;
   line-height: normal;
+
   &__list__one {
     font-weight: 500;
     margin: 0px 0px 0px 0px;
   }
+
   &__list__two {
     font-weight: 400;
     margin: 0px 0px 0px 0px;
@@ -285,6 +287,9 @@ li a {
     margin-right: 24px;
     gap: 24px;
   }
+  .hearts .heart-2 {
+    top: 0px;
+  }
 
   .container {
     &__menu__main {
@@ -335,12 +340,20 @@ li a {
   }
   .container__footer {
     display: flex;
-    align-content: center;
+    align-content: end;
     flex-wrap: wrap;
     justify-content: flex-start;
     flex-direction: row-reverse;
     align-items: flex-end;
     padding: 30px 25px 30px 25px;
+    height: 114px;
+    &__list__one {
+      flex-direction: row-reverse;
+      padding-right: 75px;
+    }
+    &__list__two {
+      flex-direction: row-reverse;
+    }
   }
 
   ul {

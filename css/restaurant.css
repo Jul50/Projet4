@@ -357,6 +357,9 @@ li a {
     margin-right: 24px;
     gap: 24px;
   }
+  .hearts .heart-2 {
+    top: 0px;
+  }
   .container__menu__main {
     max-width: 1247px;
     margin: auto;
@@ -401,12 +404,20 @@ li a {
   }
   .container__footer {
     display: flex;
-    align-content: center;
+    align-content: end;
     flex-wrap: wrap;
     justify-content: flex-start;
     flex-direction: row-reverse;
     align-items: flex-end;
     padding: 30px 25px 30px 25px;
+    height: 114px;
+  }
+  .container__footer__list__one {
+    flex-direction: row-reverse;
+    padding-right: 75px;
+  }
+  .container__footer__list__two {
+    flex-direction: row-reverse;
   }
   ul {
     list-style-type: none;
