@@ -90,12 +90,14 @@
         <div class="container__restaurants__cards">
           <a href="la_palette_du_gout.html">
             <article class="card">
-              <img
-                src="images_textes/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                alt="Photo plat la palette du goût"
-                title="Photo plat la palette du goût"
-              />
-              <span class="card__new">Nouveau</span>
+              <div class="container__img">
+                <img
+                  src="images_textes/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                  alt="Photo plat la palette du goût"
+                  title="Photo plat la palette du goût"
+                />
+                <span class="card__new">Nouveau</span>
+              </div>
               <div class="card__content">
                 <div class="card__content--txt">
                   <h4>La palette du goût</h4>
@@ -180,16 +182,20 @@
       <footer>
         <div class="container__footer">
           <h5>Ohmyfood</h5>
-          <ul class="container__footer__list__one">
-            <li><i class="fa-solid fa-utensils"></i>Proposer un restaurant</li>
-            <li>
-              <i class="fa-solid fa-handshake-angle"></i>Devenir partenaire
-            </li>
-          </ul>
-          <ul class="container__footer__list__two">
-            <li>Mentions legales</li>
-            <li><a href="mailto:destinataire@example.com">Contact</a></li>
-          </ul>
+          <div class="flex">
+            <ul class="container__footer__list__one">
+              <li>
+                <i class="fa-solid fa-utensils"></i>Proposer un restaurant
+              </li>
+              <li>
+                <i class="fa-solid fa-handshake-angle"></i>Devenir partenaire
+              </li>
+            </ul>
+            <ul class="container__footer__list__two">
+              <li>Mentions legales</li>
+              <li><a href="mailto:destinataire@example.com">Contact</a></li>
+            </ul>
+          </div>
         </div>
       </footer>
     </main>

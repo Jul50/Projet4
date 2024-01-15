@@ -239,7 +239,7 @@ a {
 }
 .container__restaurants span.card__new {
   position: absolute;
-  right: 18px;
+  right: 0px;
   background-color: #99e2d0;
   width: 80px;
   height: 29px;
@@ -261,6 +261,7 @@ a {
   flex-shrink: 0;
   padding: 0px;
   margin: 0px 18px 18px 17px;
+  position: relative;
 }
 .container__restaurants .card img {
   height: 150px;
@@ -405,6 +406,9 @@ h5 {
 }
 
 @media (min-width: 1440px) {
+  .flex {
+    display: flex;
+  }
   h2 {
     margin-bottom: 18px;
     font-size: 40px;
@@ -437,6 +441,9 @@ h5 {
     justify-content: flex-start;
     flex-direction: row-reverse;
     align-items: flex-end;
+  }
+  .container__footer__list__two {
+    padding-right: 75px;
   }
   ul {
     list-style-type: none;
