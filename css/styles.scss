@@ -298,6 +298,13 @@ a {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  &__list__one {
+    margin: 0px 0px 0px 0px;
+  }
+  &__list__two {
+    margin: 0px 0px 0px 0px;
+  }
 }
 ul {
   list-style-type: none;
@@ -351,6 +358,9 @@ h5 {
     max-width: 1080px;
     margin: auto;
   }
+  h5 {
+    margin-bottom: 2px;
+  }
 
   .functioning {
     display: flex;
@@ -373,16 +383,21 @@ h5 {
 
   .container__footer {
     display: flex;
-    align-content: center;
+    align-content: end;
     flex-wrap: wrap;
     justify-content: flex-start;
     flex-direction: row-reverse;
     align-items: flex-end;
+    padding: 30px 25px 30px 25px;
+    height: 114px;
+    &__list__one {
+      flex-direction: row-reverse;
+      padding-right: 25px;
+    }
     &__list__two {
-      padding-right: 75px;
+      flex-direction: row-reverse;
     }
   }
-
   ul {
     list-style-type: none;
     display: flex;

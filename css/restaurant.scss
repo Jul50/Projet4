@@ -197,7 +197,7 @@ h4::after {
   }
 
   &__list__two {
-    font-weight: 400;
+    font-weight: 500;
     margin: 0px 0px 0px 0px;
   }
 }
@@ -280,6 +280,9 @@ li a {
 }
 
 @media (min-width: 1440px) {
+  .flex {
+    display: flex;
+  }
   .txt__title {
     display: flex;
     justify-content: center;
@@ -348,17 +351,16 @@ li a {
     padding: 30px 25px 30px 25px;
     height: 114px;
     &__list__one {
-      flex-direction: row-reverse;
-      padding-right: 75px;
+      padding-right: 25px;
     }
     &__list__two {
-      flex-direction: row-reverse;
+      padding-right: 25px;
     }
-  }
 
-  ul {
-    list-style-type: none;
-    display: flex;
-    gap: 7px;
+    ul {
+      list-style-type: none;
+      display: flex;
+      gap: 7px;
+    }
   }
 }
